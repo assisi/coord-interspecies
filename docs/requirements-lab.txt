@@ -1,0 +1,7 @@
+numpy
+pyzmq >= 14.0
+PyYAML
+pygraphviz >= 1.0
+assisipy >= 0.16
+
+

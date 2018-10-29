@@ -1,0 +1,12 @@
+numpy
+pyzmq >= 14.0
+PyYAML
+pygraphviz >= 1.0
+assisipy >= 0.16
+# not registered on pypi, installation from version tag
+git+https://github.com/assisi/assisipy-utils.git@v0.9.2
+# don' really understand why examples all use git+git if it is install only
+# but retain comment until fully tested.. 
+#git+git://github.com/path/to/package-two@0.1#egg=package-two
+
+    
