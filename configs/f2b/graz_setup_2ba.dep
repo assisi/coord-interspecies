@@ -1,0 +1,62 @@
+# hw deployment - for simulation at least we can run the relay independently.
+# note: deploy with --allow-partial 
+# and assisirun --layer bee-arena
+
+bee-arena1:
+
+    casu-006 :
+        hostname : bbg-001
+        user : assisi
+        prefix : deploy
+        #args : ['left']
+        args: [-c f2b_CATS_Left.conf, --nbg graz_setup_2ba.nbg] 
+        controller: ../robots/multi_input.py
+        extra: [f2b_CATS_Left.conf,  graz_setup_2ba.nbg, ../robots/calibration.py, ../robots/libcas.py, ../robots/interactions.py, ../robots/mini_enh.py]
+        results: ['*.csv', '*.log', '*.py', '*calib*', '*.sync*', '*.conf', '*.nbg']
+
+
+    casu-007 :
+        hostname : bbg-001
+        user : assisi
+        prefix : deploy
+        #args : ['right']
+        args: [-c f2b_CATS_Right.conf, --nbg  graz_setup_2ba.nbg]
+        controller: ../robots/multi_input.py
+        extra: [f2b_CATS_Right.conf,  graz_setup_2ba.nbg, ../robots/calibration.py, ../robots/libcas.py, ../robots/interactions.py, ../robots/mini_enh.py]
+        results: ['*.csv', '*.log', '*.py', '*calib*', '*.sync*', '*.conf', '*.nbg']
+
+bee-arena2:
+
+    casu-008 :
+        hostname : bbg-002
+        user : assisi
+        prefix : deploy
+        args: [-c f2b_CATS_Left.conf, --nbg graz_setup_2ba.nbg] 
+        controller: ../robots/multi_input.py
+        extra: [f2b_CATS_Left.conf,  graz_setup_2ba.nbg, ../robots/calibration.py, ../robots/libcas.py, ../robots/interactions.py, ../robots/mini_enh.py]
+        results: ['*.csv', '*.log', '*.py', '*calib*', '*.sync*', '*.conf', '*.nbg']
+
+
+    casu-009 :
+        hostname : bbg-004
+        user : assisi
+        prefix : deploy
+        args: [-c f2b_CATS_Right.conf, --nbg  graz_setup_2ba.nbg]
+        controller: ../robots/multi_input.py
+        extra: [f2b_CATS_Right.conf,  graz_setup_2ba.nbg, ../robots/calibration.py, ../robots/libcas.py, ../robots/interactions.py, ../robots/mini_enh.py]
+        results: ['*.csv', '*.log', '*.py', '*calib*', '*.sync*', '*.conf', '*.nbg']
+
+
+fish-tank :
+
+    cats :
+        hostname : localhost
+        user : assisi
+        prefix : deploy/ispec
+        # note: this is a modified relay for this experiment only - not in common robot folder.
+        controller : relay_2ba.py
+        results : ['relay_msgs.log', '*.py']
+
+
+
+

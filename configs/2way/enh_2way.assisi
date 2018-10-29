@@ -1,0 +1,6 @@
+# Deployment project for the interspecies demonstrator experiments
+# fish <--> bees
+
+arena: graz_setup.arena
+nbg: graz_setup.nbg
+dep: graz_setup.dep

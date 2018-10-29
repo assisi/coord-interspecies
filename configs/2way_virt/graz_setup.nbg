@@ -1,0 +1,17 @@
+# graph is "open-loop" within each species so inter-casu links
+# - only f2b and 2way
+digraph "ispec" {
+    subgraph "bee-arena" {
+        "bee-arena/casu-031" -> "fish-tank/cats" [label = "cats"]
+        "bee-arena/casu-032" -> "fish-tank/cats" [label = "cats"]
+        
+        # include the cross-link only in the b2f closed setup
+        #"bee-arena/casu-022" -> "bee-arena/casu-023" [label = "casu"; weight=-1.5]
+        #"bee-arena/casu-023" -> "bee-arena/casu-022" [label = "casu"; weight=-1.5]
+        
+    }
+    subgraph "fish-tank" {
+        "fish-tank/cats" -> "bee-arena/casu-031" [label = "casu-031"]
+        "fish-tank/cats" -> "bee-arena/casu-032" [label = "casu-032"]
+    }
+}

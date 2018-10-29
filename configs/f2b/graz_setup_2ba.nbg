@@ -1,0 +1,27 @@
+digraph "ispec" {
+    subgraph "bee-arena1" {
+        "bee-arena1/casu-006" -> "fish-tank/cats" [label = "cats"]
+        "bee-arena1/casu-007" -> "fish-tank/cats" [label = "cats"]
+        
+        # no x-inhib links in this experiment.
+        #"bee-arena1/casu-006" -> "bee-arena1/casu-007" [label = "casu"; weight=-1.5]
+        #"bee-arena1/casu-007" -> "bee-arena1/casu-006" [label = "casu"; weight=-1.5]
+        
+    }
+    subgraph "bee-arena2" {
+        "bee-arena2/casu-008" -> "fish-tank/cats" [label = "cats"]
+        "bee-arena2/casu-009" -> "fish-tank/cats" [label = "cats"]
+        
+        #"bee-arena2/casu-008" -> "bee-arena2/casu-009" [label = "casu"; weight=-1.5]
+        #"bee-arena2/casu-009" -> "bee-arena2/casu-008" [label = "casu"; weight=-1.5]
+        
+    }
+
+    subgraph "fish-tank" {
+        "fish-tank/cats" -> "bee-arena1/casu-006" [label = "casu-006"]
+        "fish-tank/cats" -> "bee-arena1/casu-007" [label = "casu-007"]
+        "fish-tank/cats" -> "bee-arena2/casu-008" [label = "casu-008"]
+        "fish-tank/cats" -> "bee-arena2/casu-009" [label = "casu-009"]
+
+    }
+}

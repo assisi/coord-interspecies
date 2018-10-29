@@ -1,0 +1,14 @@
+digraph "ispec" {
+    subgraph "bee-arena" {
+        "bee-arena/casu-022" -> "fish-tank/cats" [label = "cats"]
+        "bee-arena/casu-023" -> "fish-tank/cats" [label = "cats"]
+        
+        "bee-arena/casu-022" -> "bee-arena/casu-023" [label = "casu"; weight=-1.5]
+        "bee-arena/casu-023" -> "bee-arena/casu-022" [label = "casu"; weight=-1.5]
+        
+    }
+    subgraph "fish-tank" {
+        "fish-tank/cats" -> "bee-arena/casu-022" [label = "casu-022"]
+        "fish-tank/cats" -> "bee-arena/casu-023" [label = "casu-023"]
+    }
+}

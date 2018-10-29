@@ -1,0 +1,36 @@
+bee-arena1:
+
+    casu-006 :
+        pose : {x : -10, y : 0, yaw : -1.57}
+        sub_addr : tcp://bbg-001:3555
+        pub_addr : tcp://bbg-001:3556
+        msg_addr : tcp://bbg-001:10103
+
+    casu-007 :
+        pose : {x : 10, y : 0, yaw : -1.57}
+        sub_addr : tcp://bbg-001:4555
+        pub_addr : tcp://bbg-001:4556
+        msg_addr : tcp://bbg-001:10104
+
+bee-arena2:
+    casu-008:
+        pose: {x: 0, y: 18, yaw: -1.57}
+        pub_addr: tcp://bbg-002:2556
+        sub_addr: tcp://bbg-002:2555
+        msg_addr: tcp://bbg-002:50202
+
+    casu-009:
+        pose : {x : 9, y : 18, yaw : -1.57}
+        sub_addr : tcp://bbg-004:1555
+        pub_addr : tcp://bbg-004:1556
+        msg_addr : tcp://bbg-004:50401
+
+
+
+fish-tank :
+
+    cats :
+        pose : {x : 0, y : -10, yaw : 1.57}
+        sub_addr : tcp://control-workstation:5557
+        pub_addr : tcp://control-workstation:5558
+        msg_addr : tcp://control-workstation:10105

@@ -1,0 +1,8 @@
+# Deployment project for the interspecies demonstrator experiments
+# fish --> bees
+# note : this setup has 2 bee setups, both fed from same fish setup.
+# they can't be truly independent replicates, but we do obtain more data this way
+
+arena: graz_setup_2ba.arena
+nbg: graz_setup_2ba.nbg
+dep: graz_setup_2ba.dep

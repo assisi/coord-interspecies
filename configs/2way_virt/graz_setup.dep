@@ -1,0 +1,37 @@
+# hw deployment
+# note: deploy with --allow-partial 
+# and assisirun --layer bee-arena
+
+bee-arena :
+    casu-031:
+        hostname : localhost
+        user : assisi
+        prefix : deploy
+        args: [-c 2way_CATS_Left.conf, --nbg graz_setup.nbg] 
+        controller: ../robots/multi_input.py
+        extra: [2way_CATS_Left.conf,  graz_setup.nbg, ../robots/calibration.py, ../robots/libcas.py, ../robots/interactions.py, ../robots/mini_enh.py]
+        results: ['*.csv', '*.log', '*.py', '*calib*', '*.sync*', '*.conf', '*.nbg']
+
+    casu-032 :
+        hostname : localhost
+        user : assisi
+        prefix : deploy
+        args: [-c 2way_CATS_Right.conf, --nbg  graz_setup.nbg]
+        controller: ../robots/multi_input.py
+        extra: [2way_CATS_Right.conf,  graz_setup.nbg, ../robots/calibration.py, ../robots/libcas.py, ../robots/interactions.py, ../robots/mini_enh.py]
+        results: ['*.csv', '*.log', '*.py', '*calib*', '*.sync*', '*.conf', '*.nbg']
+
+
+fish-tank :
+
+    cats :
+        hostname : localhost
+        user : assisi
+        prefix : deploy/ispec
+        controller : relay.py
+        results : ['relay_msgs.log', '*.py']
+
+
+
+
+

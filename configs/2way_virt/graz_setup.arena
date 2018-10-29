@@ -1,0 +1,23 @@
+# simulated: ip addresses all use localhost
+bee-arena :
+
+    casu-031 :
+        pose : {x : 0, y : 0, yaw : -1.57}
+        sub_addr : tcp://localhost:5155
+        pub_addr : tcp://localhost:5156
+        msg_addr : tcp://localhost:51803
+
+    casu-032 :
+        pose : {x : 9, y : 0, yaw : -1.57}
+        sub_addr : tcp://localhost:5155
+        pub_addr : tcp://localhost:5156
+        msg_addr : tcp://localhost:50603
+
+
+fish-tank :
+
+    cats :
+        pose : {x : 0, y : -10, yaw : 1.57}
+        sub_addr : tcp://localhost:5155
+        pub_addr : tcp://localhost:5156
+        msg_addr : tcp://localhost:10105
